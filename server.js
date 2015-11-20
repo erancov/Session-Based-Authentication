@@ -9,15 +9,29 @@ var expressSession  = require('express-session');
 var app             = express();
 var port            = process.env.PORT || 1337;
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/views'))
 // set swig engine
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
-app.set('views', __dirname + '/public');
+app.set('views', __dirname + '/views');
 
 app.set('view cache', false);
 // To disable Swig's cache, do the following:
 swig.setDefaults({ cache: false });
+
+// Retrieve
+var MongoClient = require('mongodb').MongoClient;
+
+// Connect to the db
+MongoClient.connect("mongodb://localhost:27017/Bank", function(err, db) {
+  if(!err) {
+    console.log("We are connected");
+  }
+  if(err) {
+    return console.dir(err);
+  }
+  var collection = db.collection('clients');
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());

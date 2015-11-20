@@ -13,6 +13,8 @@
     "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
     "express-session": "^1.11.3",
+    "mongodb": "^2.0.48",
+    "mongoose": "^4.2.6",
     "passport": "^0.3.0",
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0",
