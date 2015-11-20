@@ -1,5 +1,5 @@
 {
-  "name": "test-swig",
+  "name": "authentication",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -19,5 +19,9 @@
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0",
     "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-spawn": "^0.3.0"
   }
 }

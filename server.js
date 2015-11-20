@@ -6,6 +6,7 @@ var passportHttp    = require('passport-http');
 var bodyParser      = require('body-parser');
 var cookieParser    = require('cookie-parser');
 var expressSession  = require('express-session');
+var MongoClient     = require('mongodb').MongoClient;
 var app             = express();
 var port            = process.env.PORT || 1337;
 
@@ -18,9 +19,6 @@ app.set('views', __dirname + '/views');
 app.set('view cache', false);
 // To disable Swig's cache, do the following:
 swig.setDefaults({ cache: false });
-
-// Retrieve
-var MongoClient = require('mongodb').MongoClient;
 
 // Connect to the db
 MongoClient.connect("mongodb://localhost:27017/Bank", function(err, db) {
