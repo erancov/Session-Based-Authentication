@@ -59,6 +59,7 @@ passport.deserializeUser(function(id, done){
 //use route
 app.use('/', require('./routes/login'));
 app.use('/', require('./routes/dashboard'));
+app.use('/', require('./routes/authentication'))
 
 app.listen(port, function(){
   console.log('Running on port: ' + port);

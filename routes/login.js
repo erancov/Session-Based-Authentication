@@ -12,7 +12,7 @@ module.exports = (function(){
       user: req.user
     });
   });
-  
+
   router.post('/login', passport.authenticate('local'), function(req, res){
     res.redirect('/');
   });
