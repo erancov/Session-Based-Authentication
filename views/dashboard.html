@@ -3,9 +3,12 @@
 {% block title %}Dashboarb{% endblock %}
 
 {% block content %}
+<div style="padding:10px 20px 10px 20px;">
+
   <a href="/logout" style="float:right">Log out</a><br>
   <a href="#/dashboard">Dashboard</a><br>
   <a href="#/list">List</a>
-  
+
   <div ui-view="mainView" style="padding-left:200px"></div>
+</div>
 {% endblock %}

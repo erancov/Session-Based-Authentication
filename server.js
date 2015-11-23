@@ -53,7 +53,6 @@ passport.deserializeUser(function(id, done){
 var express                = require('express');
 var app                       = express();
 // var hash = bCrypt.hashSync("1234");
-// // var test = require('./config/passport');
 // var student = new ClientModel(
 //   {
 //     email:"rancovmiroslav@gmail.com",
