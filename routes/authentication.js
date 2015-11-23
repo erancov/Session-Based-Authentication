@@ -10,5 +10,8 @@ router.get('/login', authCtrl.login);
 router.post('/login', passport.authenticate('local'), function(req, res){
   res.redirect('/');
 });
+// router.post("/login", passport.authenticate("local", { successRedirect: "/",
+//     failureRedirect: "/login",
+//     failureMessage: "Invalid username or password" }));
 
 module.exports = router;

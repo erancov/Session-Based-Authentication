@@ -1,11 +1,11 @@
-var express         = require('express');
-var passport        = require('passport');
+var express               = require('express');
+var passport             = require('passport');
 var passportLocal   = require('passport-local');
-var router          = express.Router();
+var router                  = express.Router();
 
 
 module.exports = (function(){
-  
+
   function ensureAuthenticated(req, res, next){
     if(req.isAuthenticated()){
       next();

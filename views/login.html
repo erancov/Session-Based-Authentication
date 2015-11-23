@@ -4,12 +4,10 @@
 
 {% block content %}
 
-  <form style="text-align:center;margin-top:100px" class="" action="" method="post">
-    <label for="username">Username:</label>
-      <input type="text" name="username" placeholder="Enter Your Username"><br><br>
-      <label for="password">Password:</label>
-      <input type="password" name="password" placeholder="Enter Your Password"><br><br>
-      <button type="submit" name="button">Log in</button>
+  <form style="text-align:center;margin:100px auto;width:400px;" class="" action="http://localhost:1337/login" method="post">
+      <input type="email" name="username" placeholder="Enter Your Username" required><br><br>
+      <input type="password" name="password" placeholder="Enter Your Password" required><br><br>
+      <button type="submit" name="button" class="btn">Log in</button>
   </form>
 
 {% endblock %}

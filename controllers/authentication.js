@@ -1,6 +1,11 @@
 'use strict';
 
-var express         = require('express');
+var express                 = require('express');
+var passport               = require('passport');
+var passportLocal     = require('passport-local').Strategy;
+var cookieParser       = require('cookie-parser');
+var expressSession  = require('express-session');
+var app                       = express();
 
 
 module.exports.login = login;
@@ -11,5 +16,4 @@ module.exports.login = login;
     isAuthenticated: req.isAuthenticated(),
     user: req.user
   });
-
 }

@@ -1,4 +1,4 @@
-angular.module('dashboard', ['ui.router', 'ngRoute'])
+angular.module('auth', ['ui.router', 'ngRoute'])
 .config(function($urlRouterProvider, $stateProvider){
   $stateProvider
   .state('dashboard', {
