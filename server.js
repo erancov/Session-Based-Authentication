@@ -8,7 +8,8 @@ var cookieParser      = require('cookie-parser');
 var expressSession = require('express-session');
 var MongoClient      = require('mongodb').MongoClient;
 var mongoose          = require('mongoose');
-var port                      = process.env.PORT || 1337;
+var config                 = require('./config/environments');
+var port                      = process.env.PORT || config.server.port;
 var db                         = mongoose.connect('mongodb://localhost:27017/Bank');
 var ClientModel        = require('./models/client');
 

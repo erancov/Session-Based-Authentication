@@ -3,11 +3,12 @@ var exec             = require('child_process').exec;
 var spawn          = require("gulp-spawn").spawn;
 var gutil              = require('gulp-util');
 var colors           = require('colors');
-var mongoPath = "\"C:\\Program Files\\MongoDB\\Server\\3.0\\bin\\mongod.exe\"";
+var config           = require('./config/environments');
+// var mongoPath = "\"C:\\Program Files\\MongoDB\\Server\\3.0\\bin\\mongod.exe\"";
 
   gulp.task('mongo', function (cb) {
-  gutil.log("@@@Running on port :27017@@@" .green);
-    exec(mongoPath, function (err, stdout, stderr) {
+  gutil.log("@@@Running on port :".green + config.server.port + "@@@" .green);
+    exec(config.db.path, function (err, stdout, stderr) {
       console.log(stdout);
       console.log(stderr);
       cb(err);
@@ -15,7 +16,7 @@ var mongoPath = "\"C:\\Program Files\\MongoDB\\Server\\3.0\\bin\\mongod.exe\"";
   });
 
   gulp.task('server', function (cb) {
-  gutil.log("@@@Running on port :1337@@@".magenta);
+  gutil.log("@@@Running on port :" + config.db.port + "@@@".magenta);
     exec('node server.js', function (err, stdout, stderr) {
       console.log(stdout);
       console.log(stderr);
