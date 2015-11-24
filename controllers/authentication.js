@@ -1,11 +1,7 @@
 'use strict';
 
-var express                 = require('express');
-var passport               = require('passport');
-var passportLocal     = require('passport-local').Strategy;
-var cookieParser       = require('cookie-parser');
-var expressSession  = require('express-session');
-var app                       = express();
+var express         = require('express');
+var app             = express();
 
 
 module.exports.login = login;

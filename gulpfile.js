@@ -6,7 +6,7 @@ var colors           = require('colors');
 var config           = require('./config/environments');
 
   gulp.task('mongo', function (cb) {
-  gutil.log("@@@".green+"Running on port :" + config.server.port + "@@@" .green);
+  gutil.log("@@@".green+"Running on port :" + config.db.port + "@@@" .green);
     exec(config.db.path, function (err, stdout, stderr) {
       console.log(stdout);
       console.log(stderr);
@@ -15,7 +15,7 @@ var config           = require('./config/environments');
   });
 
   gulp.task('server', function (cb) {
-  gutil.log("@@@".magenta + "Running on port :" + config.db.port + "@@@".magenta);
+  gutil.log("@@@".magenta + "Running on port :" + config.server.port + "@@@".magenta);
     exec('node server.js', function (err, stdout, stderr) {
       console.log(stdout);
       console.log(stderr);

@@ -1,7 +1,7 @@
 var passportLocal     = require('passport-local').Strategy;
 var  bCrypt           = require('bcrypt-nodejs');
 var ClientModel       = require('./../models/client');
-
+var flash             = require('flash')();
 
 module.exports = function(passport) {
 
@@ -27,13 +27,13 @@ module.exports = function(passport) {
 
       // Username does not exist, log error & redirect back
           if (!user){
-            console.log('User Not Found with username '+username);
-            return done(null, false, {message: 'Oops! No  username.'});
+            // console.log('User Not Found with username '+username);
+            return done(null, false, {message: 'Invalid email or password.'});
           }
           if (!isValidPassword(user, password)){
-                   console.log('Invalid Password');
+
                    return done(null, false,
-                       {message: 'Oops! No  password.'});
+                       {message: 'Invalid email or password.'});
                  }
 
         return done(null, user);
