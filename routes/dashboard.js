@@ -1,7 +1,5 @@
 var express               = require('express');
-var passport             = require('passport');
-var passportLocal   = require('passport-local');
-var router                  = express.Router();
+var router                = express.Router();
 
 
 module.exports = (function(){
