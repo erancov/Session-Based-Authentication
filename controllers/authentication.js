@@ -14,13 +14,7 @@ module.exports.logout = logout;
 }
 
 function loggedIn(req, res, next) {
-  if(req.isAuthenticated()) {
-    req.session.messages = [];
     res.render('dashboard');
-  }else {
-    res.redirect('/login');
-  }
-
 }
 
 function logout(req, res, next) {

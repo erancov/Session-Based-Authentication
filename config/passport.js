@@ -1,3 +1,5 @@
+'use strict';
+
 var passportLocal     = require('passport-local').Strategy;
 var  bCrypt           = require('bcrypt-nodejs');
 var ClientModel       = require('./../models/client');
