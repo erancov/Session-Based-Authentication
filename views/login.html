@@ -3,8 +3,8 @@
 {% block title %}Log in{% endblock %}
 
 {% block content %}
-
   <form style="text-align:center;margin:100px auto;width:400px;" class="" action="http://localhost:1337/login" method="post">
+            <div class="">{{message}}</div>
       <input type="email" name="username" placeholder="Enter Your Username" required><br><br>
       <input type="password" name="password" placeholder="Enter Your Password" required><br><br>
       <button type="submit" name="button" class="btn">Log in</button>

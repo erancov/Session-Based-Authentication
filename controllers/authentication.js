@@ -5,11 +5,20 @@ var app             = express();
 
 
 module.exports.login = login;
+module.exports.loggedIn = loggedIn;
+module.exports.logout = logout;
+
 
  function login(req, res, next) {
+   res.render('login', {message : req.session.messages});
+}
 
-  res.render('login', {
-    isAuthenticated: req.isAuthenticated(),
-    user: req.user
-  });
+function loggedIn(req, res, next) {
+    res.render('dashboard');
+    req.session.messages = [];
+}
+
+function logout(req, res, next) {
+    req.logout();
+    res.redirect('/login');
 }

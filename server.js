@@ -44,8 +44,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //use route
-app.use('/', require('./routes/authentication'))
-app.use('/', require('./routes/dashboard'));
+app.use('/', require('./routes/authentication'));
 
 app.listen(port, function(){
   console.log('Running on port: ' + port);

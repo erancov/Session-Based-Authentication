@@ -1,7 +1,7 @@
 var passportLocal     = require('passport-local').Strategy;
 var  bCrypt           = require('bcrypt-nodejs');
 var ClientModel       = require('./../models/client');
-var flash             = require('connect-flash');
+
 
 module.exports = function(passport) {
 
@@ -15,8 +15,6 @@ module.exports = function(passport) {
         done(err, user);
       });
   });
-
-
   passport.use('local-login', new passportLocal(function(username, password, done){
     ClientModel.findOne({email : username},
         function(err, user) {
