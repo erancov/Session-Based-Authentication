@@ -5,6 +5,9 @@ Authentication app using nodejs
     Clone this app in your directory && run npm Install
 
 ### Usage
-    'gulp app' ### for MongoDb and Server
-    'gulp mongo' ### for MongoDb only 
-    'gulp server' ### for Server only
+#### To start the Server and MongoDb
+    'gulp app'
+#### To start only MongoDB
+    'gulp mongo'
+#### To start only the Server
+    'gulp server' 
