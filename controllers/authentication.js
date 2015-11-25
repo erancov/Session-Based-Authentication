@@ -10,14 +10,12 @@ module.exports.logout = logout;
 
 
  function login(req, res, next) {
-    console.log(req.session.messages);
-   res.render('login');
+   res.render('login', {message: req.session.messages});
 }
 
 function loggedIn(req, res, next) {
-  console.log(req.user);
-    req.session.messages = [];
   if(req.isAuthenticated()) {
+    req.session.messages = [];
     res.render('dashboard');
   }else {
     res.redirect('/login');
